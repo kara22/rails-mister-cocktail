@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Here is your cocktail</h1>
+  <p><%= @cocktail.name %></p>
+  <p>Doses : </p>
+  <% @cocktail.doses.each do |dose| %>
+    <p><strong>Description :</strong> <%= dose.description %> | <strong>Ingredient :</strong> <%= dose.ingredient.name %> | <%= link_to "delete", dose_path(dose), method: :delete %></p>
+  <% end %>
+  <%= render "cocktail", locals: { cocktail: @cocktail } %>
+</div>
+
