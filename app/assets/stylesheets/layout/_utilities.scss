@@ -23,3 +23,20 @@
 .bg-dark-blue {
   background: #3b5998;
 }
+
+.wrapper-show {
+  background-color:#EEEEEE;
+  height:400px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.wrapper-white {
+  background-color:white;
+  border-radius: 5px;
+  min-height:348px;
+  padding:15px;
+}
