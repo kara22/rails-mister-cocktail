@@ -1,6 +1,15 @@
-<div class="container">
-  <div class="row">
-    <h1 class="text-center">Details of <%= @cocktail.name %> cocktail</h1>
+<div class="container photos-padded">
+  <h1 class="text-center">Details of <%= @cocktail.name %> cocktail</h1>
+  <div class="row little-padded">
+    <% if @cocktail.photos? %>
+      <% @cocktail.photos.each do |photo| %>
+        <div class="col-md-4">
+              <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill, class: "img-thumbnail" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="row little-padded">
     <div class="wrapper-show">
       <div class="col-xs-12 col-md-6">
         <div class="wrapper-white">
@@ -24,6 +33,6 @@
     </div>
   </div>
 </div>
-<div class="container text-center padded">
+<div class="container text-center">
   <%= link_to "Back to cocktail pages", cocktails_path, class: "btn-red-cassed" %>
 </div>

@@ -10,7 +10,13 @@
   <div class="row">
   <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
-    <%= render "card", cocktail: cocktail %>
+      <% if cocktail.photos.size != 0 %>
+        <% i = rand(cocktail.photos.size) %>
+        <% picture_url = cl_image_path cocktail.photos[i].path %>
+      <% else %>
+        <% picture_url = image_path('background.jpg') %>
+      <% end %>
+    <%= render "card", cocktail: cocktail, picture_url: picture_url %>
     </div>
   <% end %>
   </div>
